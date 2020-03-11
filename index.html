@@ -16,6 +16,10 @@
     <script data-require="d3@3.5.3" data-semver="3.5.3" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/queue.v1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
     <title>
         DataVis Project
     </title>
@@ -857,6 +861,146 @@
 
 <script src="js/seaLevel_vs_co2Emission.js"></script>
 
+<h2>Climate Change Indicators: Tropical Cyclone Activity</h2>
+<p>
+    This graph shows the number of hurricanes that formed in the North Atlantic Ocean each year from 1878 to 2015, along
+    with the number that made landfall in the United States. The blue curve shows how the total count in the orange curve
+    can be adjusted to attempt to account for the lack of aircraft and satellite observations in early years. All three
+    curves have been smoothed using a five-year average, plotted at the middle year. The most recent average (2011–2015) is
+    plotted at 2013.
+</p>
+<div class="bk-root" align="center" id="8bfa5851-7c22-40cc-bab3-afcc99a92409" data-root-id="2076"></div>
+
+<script type="application/json" id="2402">
+          {"ff9b4545-545d-4df7-9a85-af7f5f1ed221":{"roots":{"references":[{"attributes":{"background_fill_alpha":{"value":0.5},"background_fill_color":{"value":"beige"},"below":[{"id":"2085","type":"LinearAxis"}],"center":[{"id":"2089","type":"Grid"},{"id":"2094","type":"Grid"},{"id":"2110","type":"Legend"}],"left":[{"id":"2090","type":"LinearAxis"}],"plot_height":500,"plot_width":900,"renderers":[{"id":"2102","type":"GlyphRenderer"},{"id":"2115","type":"GlyphRenderer"},{"id":"2129","type":"GlyphRenderer"}],"title":{"id":"2097","type":"Title"},"toolbar":{"id":"2095","type":"Toolbar"},"x_range":{"id":"2077","type":"DataRange1d"},"x_scale":{"id":"2081","type":"LinearScale"},"y_range":{"id":"2079","type":"DataRange1d"},"y_scale":{"id":"2083","type":"LinearScale"}},"id":"2076","subtype":"Figure","type":"Plot"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"2075","type":"HoverTool"}]},"id":"2095","type":"Toolbar"},{"attributes":{"line_alpha":0.5,"line_color":"#ff7f0e","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2113","type":"Line"},{"attributes":{},"id":"2139","type":"UnionRenderers"},{"attributes":{},"id":"2109","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"2099","type":"ColumnDataSource"}},"id":"2103","type":"CDSView"},{"attributes":{"callback":null,"data":{"x":[1880,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1892,1893,1894,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013],"y":{"__ndarray__":"ZmZmZmZmGkDNzMzMzMwUQDMzMzMzMxNAzczMzMzMEECamZmZmZkVQDMzMzMzMxtAmpmZmZmZHUAzMzMzMzMfQAAAAAAAABxAmpmZmZmZGUDNzMzMzMwUQAAAAAAAABhAMzMzMzMzF0AzMzMzMzMXQGZmZmZmZhZAzczMzMzMFEDNzMzMzMwQQM3MzMzMzBBAmpmZmZmZEUCamZmZmZkRQJqZmZmZmRFAMzMzMzMzE0BmZmZmZmYSQM3MzMzMzBBAzczMzMzMEEDNzMzMzMwMQDMzMzMzMwtAZmZmZmZmDkDNzMzMzMwQQM3MzMzMzAxAmpmZmZmZEUAAAAAAAAAQQGZmZmZmZgZAmpmZmZmZCUBmZmZmZmYSQM3MzMzMzBBAzczMzMzMEEBmZmZmZmYSQJqZmZmZmRFAMzMzMzMzC0DNzMzMzMwMQM3MzMzMzAxAzczMzMzMEEDNzMzMzMwMQM3MzMzMzBBAmpmZmZmZEUCamZmZmZkRQAAAAAAAABBAzczMzMzMEECamZmZmZkJQM3MzMzMzAxAAAAAAAAAFEAzMzMzMzMXQJqZmZmZmRlAzczMzMzMHEAzMzMzMzMbQJqZmZmZmRVAZmZmZmZmEkAzMzMzMzMTQM3MzMzMzBBAzczMzMzMEECamZmZmZkRQJqZmZmZmRVAzczMzMzMFEAAAAAAAAAUQM3MzMzMzBRAmpmZmZmZFUDNzMzMzMwUQJqZmZmZmRlAmpmZmZmZHUCamZmZmZkdQGZmZmZmZh5AZmZmZmZmHkDNzMzMzMwcQJqZmZmZmRlAAAAAAAAAGEAAAAAAAAAYQAAAAAAAABhAAAAAAAAAFEAzMzMzMzMXQDMzMzMzMxdAMzMzMzMzF0BmZmZmZmYWQGZmZmZmZhZAmpmZmZmZFUAAAAAAAAAYQJqZmZmZmRVAZmZmZmZmGkAzMzMzMzMbQGZmZmZmZhpAAAAAAAAAGEAAAAAAAAAYQJqZmZmZmRFAZmZmZmZmEkBmZmZmZmYSQAAAAAAAABRAzczMzMzMFECamZmZmZkVQAAAAAAAABhAzczMzMzMGEBmZmZmZmYWQM3MzMzMzBRAzczMzMzMFEAzMzMzMzMTQM3MzMzMzBBAmpmZmZmZEUAzMzMzMzMTQM3MzMzMzBRAmpmZmZmZFUCamZmZmZkVQGZmZmZmZhZAmpmZmZmZFUBmZmZmZmYSQM3MzMzMzBRAzczMzMzMGEAAAAAAAAAYQM3MzMzMzBxAZmZmZmZmIEBmZmZmZmYeQGZmZmZmZh5AMzMzMzMzH0DNzMzMzMwcQJqZmZmZmR1AmpmZmZmZIUAAAAAAAAAgQM3MzMzMzCBAMzMzMzMzIUCamZmZmZkdQDMzMzMzMxtAzczMzMzMHEAAAAAAAAAgQDMzMzMzMxtAmpmZmZmZHUAzMzMzMzMXQA==","dtype":"float64","shape":[134]}},"selected":{"id":"2140","type":"Selection"},"selection_policy":{"id":"2139","type":"UnionRenderers"}},"id":"2112","type":"ColumnDataSource"},{"attributes":{"text":"Number of Hurricanes in the North Atlantic, 1878-2015","text_font_size":{"value":"20pt"}},"id":"2097","type":"Title"},{"attributes":{},"id":"2140","type":"Selection"},{"attributes":{"axis_label":"Year","axis_label_text_font_size":{"value":"15pt"},"formatter":{"id":"2109","type":"BasicTickFormatter"},"ticker":{"id":"2086","type":"BasicTicker"}},"id":"2085","type":"LinearAxis"},{"attributes":{"source":{"id":"2126","type":"ColumnDataSource"}},"id":"2130","type":"CDSView"},{"attributes":{},"id":"2124","type":"Selection"},{"attributes":{"callback":null,"tooltips":[["index","$index"],["(x,y)","($x, $y)"]]},"id":"2075","type":"HoverTool"},{"attributes":{},"id":"2220","type":"UnionRenderers"},{"attributes":{"line_alpha":0.5,"line_color":"#2ca02c","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2127","type":"Line"},{"attributes":{"callback":null},"id":"2079","type":"DataRange1d"},{"attributes":{"dimension":1,"ticker":{"id":"2091","type":"BasicTicker"}},"id":"2094","type":"Grid"},{"attributes":{"label":{"value":"Hurricanes reaching the United States"},"renderers":[{"id":"2129","type":"GlyphRenderer"}]},"id":"2141","type":"LegendItem"},{"attributes":{"label":{"value":"Total hurricanes (unadjusted)"},"renderers":[{"id":"2115","type":"GlyphRenderer"}]},"id":"2125","type":"LegendItem"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2114","type":"Line"},{"attributes":{"callback":null,"data":{"x":[1880,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1892,1893,1894,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013],"y":{"__ndarray__":"SEvl7QhHI0DluFM6WH8gQAD76NSVTx9ApoP1fw7zHEArgv+tZMcgQDbNO07RcSNACYUIOIRqJEA4bFuU2eAkQMtneR7c/SJAcQM+P4ywIUBBYOXQIlseQABvgQTFryBA6StIMxZtIEBmvRjKiXYgQAltOZfi6h9ATfOOU3QkHkCOAdnr3d8ZQAnE6/oFuxlAMv59xoWDGkApdF5jl6gaQNY5BmSvtxpAh/4JLlaUHEBBmrFoOnsbQIp2FVJ+UhlAew+XHHfKGEBIMxZNZ+cVQLIRiNf1ixRA2V92Tx7WFUAge7374z0XQFZD4h5LnxRAoImw4emVF0D+YOC593AVQF3+Q/rtqxBA7vDXZI06EkBfB84ZURoYQMpPqn06XhdAW7G/7J68GEAD7KNTV34aQL3jFB3JpRlAxmgdVU0QFUAwgVt389QUQHi0ccRafBNAwVYJFoczFUA3pics8YASQKPH7236sxRAW3wKgPFMFUAAAAAAAEAVQIrqrYGtkhNAZ9DQP8FFFECYaftXVloQQDtT6LzGLhJA0a5Cyk/qF0CcoiO5/EcbQNsRTgtetB1A2c73U+NlIEBq9kArMOQeQEIJM23/ChlASnuDL0wmFkC0PA/uzpoXQHwsfeiC+hVAZvLNNjemF0BDqFKzB5oZQMIv9fOm4h1AuCOcFryoHUDOGVHaG/wcQOY/pN++zhxAFm9kHvkDHUDbEU4LXnQbQI1/n3HhAB9AkGtDxTj/IEC0yHa+n5ogQFgE/1vJriBAQBh47j2cIEBtUWaDTHIfQBABh1ClJhxAWD7L8+BuGkAM6lvmdFkaQKhSswdaQRpA8BExJZIoFkC4dTdPdUgZQFlMbD6uTRlA0xito6pJGUBangd3Z20YQIj58gLsYxhAi+B/K9kxF0AOiXssfSgZQJ9x4UBIVhZAEoPAyqHFGkAzMzMzMzMbQGZmZmZmZhpAAAAAAAAAGEAAAAAAAAAYQJqZmZmZmRFAZmZmZmZmEkBmZmZmZmYSQAAAAAAAABRAzczMzMzMFECamZmZmZkVQAAAAAAAABhAzczMzMzMGEBmZmZmZmYWQM3MzMzMzBRAzczMzMzMFEAzMzMzMzMTQM3MzMzMzBBAmpmZmZmZEUAzMzMzMzMTQM3MzMzMzBRAmpmZmZmZFUCamZmZmZkVQGZmZmZmZhZAmpmZmZmZFUBmZmZmZmYSQM3MzMzMzBRAzczMzMzMGEAAAAAAAAAYQM3MzMzMzBxAZmZmZmZmIEBmZmZmZmYeQGZmZmZmZh5AMzMzMzMzH0DNzMzMzMwcQJqZmZmZmR1AmpmZmZmZIUAAAAAAAAAgQM3MzMzMzCBAMzMzMzMzIUCamZmZmZkdQDMzMzMzMxtAzczMzMzMHEAAAAAAAAAgQDMzMzMzMxtAmpmZmZmZHUAzMzMzMzMXQA==","dtype":"float64","shape":[134]}},"selected":{"id":"2124","type":"Selection"},"selection_policy":{"id":"2123","type":"UnionRenderers"}},"id":"2099","type":"ColumnDataSource"},{"attributes":{},"id":"2221","type":"Selection"},{"attributes":{},"id":"2081","type":"LinearScale"},{"attributes":{"data_source":{"id":"2126","type":"ColumnDataSource"},"glyph":{"id":"2127","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"2128","type":"Line"},"selection_glyph":null,"view":{"id":"2130","type":"CDSView"}},"id":"2129","type":"GlyphRenderer"},{"attributes":{"click_policy":"hide","items":[{"id":"2111","type":"LegendItem"},{"id":"2125","type":"LegendItem"},{"id":"2141","type":"LegendItem"}],"location":[140,310]},"id":"2110","type":"Legend"},{"attributes":{},"id":"2107","type":"BasicTickFormatter"},{"attributes":{"callback":null},"id":"2077","type":"DataRange1d"},{"attributes":{"label":{"value":"Total hurricanes (adjusted)"},"renderers":[{"id":"2102","type":"GlyphRenderer"}]},"id":"2111","type":"LegendItem"},{"attributes":{"line_alpha":0.5,"line_color":"#1f77b4","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2100","type":"Line"},{"attributes":{"ticker":{"id":"2086","type":"BasicTicker"}},"id":"2089","type":"Grid"},{"attributes":{"data_source":{"id":"2099","type":"ColumnDataSource"},"glyph":{"id":"2100","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"2101","type":"Line"},"selection_glyph":null,"view":{"id":"2103","type":"CDSView"}},"id":"2102","type":"GlyphRenderer"},{"attributes":{},"id":"2086","type":"BasicTicker"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2128","type":"Line"},{"attributes":{},"id":"2123","type":"UnionRenderers"},{"attributes":{"axis_label":"Number of Hurricanes","axis_label_text_font_size":{"value":"15pt"},"formatter":{"id":"2107","type":"BasicTickFormatter"},"ticker":{"id":"2091","type":"BasicTicker"}},"id":"2090","type":"LinearAxis"},{"attributes":{},"id":"2083","type":"LinearScale"},{"attributes":{"source":{"id":"2112","type":"ColumnDataSource"}},"id":"2116","type":"CDSView"},{"attributes":{"data_source":{"id":"2112","type":"ColumnDataSource"},"glyph":{"id":"2113","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"2114","type":"Line"},"selection_glyph":null,"view":{"id":"2116","type":"CDSView"}},"id":"2115","type":"GlyphRenderer"},{"attributes":{"callback":null,"data":{"x":[1880,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1892,1893,1894,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013],"y":{"__ndarray__":"zczMzMzMBEAzMzMzMzMDQM3MzMzMzPw/MzMzMzMz8z+amZmZmZkBQM3MzMzMzARAAAAAAAAACECamZmZmZkJQAAAAAAAAAhAAAAAAAAAAEAzMzMzMzPzP5qZmZmZmfk/zczMzMzM/D8AAAAAAAAAQJqZmZmZmQFAMzMzMzMzA0AAAAAAAAAAQJqZmZmZmQFAmpmZmZmZAUAAAAAAAAAAQM3MzMzMzPw/mpmZmZmZ+T9mZmZmZmb2PzMzMzMzM/M/mpmZmZmZ+T+amZmZmZn5P2ZmZmZmZvY/AAAAAAAAAEAzMzMzMzMDQAAAAAAAAABAMzMzMzMzA0BmZmZmZmYGQM3MzMzMzPw/mpmZmZmZAUDNzMzMzMwEQDMzMzMzMwNAmpmZmZmZAUAzMzMzMzMDQM3MzMzMzPw/ZmZmZmZm9j8zMzMzMzPzPwAAAAAAAPA/ZmZmZmZm9j8zMzMzMzPzP5qZmZmZmfk/mpmZmZmZ+T/NzMzMzMz8P5qZmZmZmfk/mpmZmZmZ+T+amZmZmZnpPzMzMzMzM/M/zczMzMzM/D8AAAAAAAAAQDMzMzMzMwNAAAAAAAAACEDNzMzMzMwEQAAAAAAAAABAmpmZmZmZ+T+amZmZmZn5P2ZmZmZmZvY/zczMzMzM/D+amZmZmZn5PwAAAAAAAABAmpmZmZmZAUAAAAAAAAAAQJqZmZmZmQFAzczMzMzMBEDNzMzMzMwEQM3MzMzMzARAMzMzMzMzA0AAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEDNzMzMzMz8PwAAAAAAAABAAAAAAAAAAECamZmZmZn5P5qZmZmZmfk/mpmZmZmZ+T+amZmZmZn5P2ZmZmZmZvY/ZmZmZmZm9j+amZmZmZn5P2ZmZmZmZvY/mpmZmZmZ+T/NzMzMzMz8P83MzMzMzPw/ZmZmZmZm9j9mZmZmZmb2P5qZmZmZmfk/mpmZmZmZ+T9mZmZmZmb2PzMzMzMzM/M/MzMzMzMz8z+amZmZmZnpP5qZmZmZmek/mpmZmZmZ6T8zMzMzMzPzPzMzMzMzM/M/AAAAAAAA8D+amZmZmZnpPwAAAAAAAPA/MzMzMzMz4z+amZmZmZn5PwAAAAAAAABAmpmZmZmZAUCamZmZmZkBQM3MzMzMzARAZmZmZmZm9j8zMzMzMzPzPzMzMzMzM/M/MzMzMzMz8z8zMzMzMzPjPwAAAAAAAPA/MzMzMzMz8z8zMzMzMzPzP5qZmZmZmfk/mpmZmZmZAUDNzMzMzMz8P2ZmZmZmZvY/ZmZmZmZm9j8zMzMzMzPzP83MzMzMzPw/AAAAAAAACEAAAAAAAAAIQAAAAAAAAAhAmpmZmZmZCUAAAAAAAAAAQJqZmZmZmek/AAAAAAAA8D8zMzMzMzPzPzMzMzMzM+M/mpmZmZmZ6T+amZmZmZnpPw==","dtype":"float64","shape":[134]}},"selected":{"id":"2221","type":"Selection"},"selection_policy":{"id":"2220","type":"UnionRenderers"}},"id":"2126","type":"ColumnDataSource"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2101","type":"Line"},{"attributes":{},"id":"2091","type":"BasicTicker"}],"root_ids":["2076"]},"title":"Bokeh Application","version":"1.3.4"}}
+        </script>
+<script type="text/javascript">
+    (function () {
+        var fn = function () {
+            Bokeh.safely(function () {
+                (function (root) {
+                    function embed_document(root) {
+
+                        var docs_json = document.getElementById('2402').textContent;
+                        var render_items = [{ "docid": "ff9b4545-545d-4df7-9a85-af7f5f1ed221", "roots": { "2076": "8bfa5851-7c22-40cc-bab3-afcc99a92409" } }];
+                        root.Bokeh.embed.embed_items(docs_json, render_items);
+
+                    }
+                    if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                    } else {
+                        var attempts = 0;
+                        var timer = setInterval(function (root) {
+                            if (root.Bokeh !== undefined) {
+                                embed_document(root);
+                                clearInterval(timer);
+                            }
+                            attempts++;
+                            if (attempts > 100) {
+                                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                                clearInterval(timer);
+                            }
+                        }, 10, root)
+                    }
+                })(window);
+            });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+    })();
+</script>
+
+<p>
+    This figure shows total annual Accumulated Cyclone Energy (ACE) Index values, which account for cyclone strength,
+    duration, and frequency, from 1950 through 2015.
+</p>
+<div class="bk-root" align="center" id="3cacac97-a197-4f10-af4c-1d541f01172a" data-root-id="2416"></div>
+<script type="application/json" id="2652">
+          {"5066201e-8f44-487b-b3ae-3009b959c3ef":{"roots":{"references":[{"attributes":{"background_fill_alpha":{"value":0.5},"background_fill_color":{"value":"beige"},"below":[{"id":"2425","type":"LinearAxis"}],"center":[{"id":"2429","type":"Grid"},{"id":"2434","type":"Grid"}],"left":[{"id":"2430","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":500,"plot_width":900,"renderers":[{"id":"2442","type":"GlyphRenderer"}],"title":{"id":"2437","type":"Title"},"toolbar":{"id":"2435","type":"Toolbar"},"x_range":{"id":"2417","type":"DataRange1d"},"x_scale":{"id":"2421","type":"LinearScale"},"y_range":{"id":"2419","type":"DataRange1d"},"y_scale":{"id":"2423","type":"LinearScale"}},"id":"2416","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"tooltips":[["index","$index"],["(x,y)","($x, $y)"]]},"id":"2415","type":"HoverTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.6},"x":{"field":"x"}},"id":"2441","type":"VBar"},{"attributes":{"text":"North Atlantic Tropical Cyclone Activity According to the Accumulated Cyclone Energy Index, 1950\u20132015","text_font_size":{"value":"12pt"}},"id":"2437","type":"Title"},{"attributes":{},"id":"2527","type":"BasicTickFormatter"},{"attributes":{"dimension":1,"ticker":{"id":"2431","type":"BasicTicker"}},"id":"2434","type":"Grid"},{"attributes":{"callback":null},"id":"2417","type":"DataRange1d"},{"attributes":{},"id":"2426","type":"BasicTicker"},{"attributes":{},"id":"2421","type":"LinearScale"},{"attributes":{"callback":null,"data":{"top":{"__ndarray__":"2D0en3WDbECxezw+6wZhQG2bd9YNplJA+kZ0z7rBWkAAAAAAAABeQMynfSnyWWVAhs7ns24wTUBfDAZT5LNWQMynfSnyWWBAejEYTJHPVEDJtdsNpshXQJdP+1Lks2tAr4maIp91Q0A7EQ4HU+RfQE+Ew8EU+WZAXwwGU+SzVkDTYAlaN5hjQCfC4WCKfGBAGixB6wZTSEDFymjks25mQPRiMJgin0VAVT1P8lk3WkCviZoin3VDQA6PcYMp8klARODEZ91gUkBRdmXdYIpUQF8MBlPks1ZAQPVRPusGO0B5OEc+6wZRQHdqLjeYIllAXBpkN5giZECxezw+6wZbQNo276wbTEFADJ3PZ91gMkBfDAZT5LNWQMm12w2myFdAr4maIp91Q0AMnc9n3WBCQNgZlYp81ltAIQlWMEU+YkBVPU/yWTdaQK+JmiKfdUNAUXZl3WCKVECj7Mq6wRRFQNo276wbTEFAQu4iTJHPbkDFymjks25mQEbZlXWDKUZA02AJWjeYaEDsjEpFPutnQBRztbrBFGBASMs3kc+6XUAcJRL5rBtSQJFy5g2myGdA5tO+FPmsbkBIOfMGU+RwQJNkiCnyWVVAAAAAAAAAVEBIyzeRz7pjQDRYgtYNpkxAabAErRtMZkCxezw+6wZhQMXKaOSzbmFAr4maIp91Q0AcJRL5rBtSQHk4Rz7rBlFA","dtype":"float64","shape":[66]},"x":[1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015]},"selected":{"id":"2531","type":"Selection"},"selection_policy":{"id":"2530","type":"UnionRenderers"}},"id":"2439","type":"ColumnDataSource"},{"attributes":{},"id":"2529","type":"BasicTickFormatter"},{"attributes":{"axis_label":"Year","axis_label_text_font_size":{"value":"12pt"},"formatter":{"id":"2529","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"ticker":{"id":"2426","type":"BasicTicker"}},"id":"2425","type":"LinearAxis"},{"attributes":{"grid_line_color":null,"ticker":{"id":"2426","type":"BasicTicker"}},"id":"2429","type":"Grid"},{"attributes":{},"id":"2423","type":"LinearScale"},{"attributes":{"data_source":{"id":"2439","type":"ColumnDataSource"},"glyph":{"id":"2440","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"2441","type":"VBar"},"selection_glyph":null,"view":{"id":"2443","type":"CDSView"}},"id":"2442","type":"GlyphRenderer"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"2415","type":"HoverTool"}]},"id":"2435","type":"Toolbar"},{"attributes":{},"id":"2530","type":"UnionRenderers"},{"attributes":{},"id":"2431","type":"BasicTicker"},{"attributes":{},"id":"2531","type":"Selection"},{"attributes":{"callback":null,"start":0},"id":"2419","type":"DataRange1d"},{"attributes":{"source":{"id":"2439","type":"ColumnDataSource"}},"id":"2443","type":"CDSView"},{"attributes":{"axis_label":"Accumulated Cyclone Energy Index","axis_label_text_font_size":{"value":"12pt"},"formatter":{"id":"2527","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"ticker":{"id":"2431","type":"BasicTicker"}},"id":"2430","type":"LinearAxis"},{"attributes":{"fill_alpha":{"value":0.5},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.5},"line_color":{"value":"#1f77b4"},"top":{"field":"top"},"width":{"value":0.6},"x":{"field":"x"}},"id":"2440","type":"VBar"}],"root_ids":["2416"]},"title":"Bokeh Application","version":"1.3.4"}}
+        </script>
+<script type="text/javascript">
+    (function () {
+        var fn = function () {
+            Bokeh.safely(function () {
+                (function (root) {
+                    function embed_document(root) {
+
+                        var docs_json = document.getElementById('2652').textContent;
+                        var render_items = [{ "docid": "5066201e-8f44-487b-b3ae-3009b959c3ef", "roots": { "2416": "3cacac97-a197-4f10-af4c-1d541f01172a" } }];
+                        root.Bokeh.embed.embed_items(docs_json, render_items);
+
+                    }
+                    if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                    } else {
+                        var attempts = 0;
+                        var timer = setInterval(function (root) {
+                            if (root.Bokeh !== undefined) {
+                                embed_document(root);
+                                clearInterval(timer);
+                            }
+                            attempts++;
+                            if (attempts > 100) {
+                                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                                clearInterval(timer);
+                            }
+                        }, 10, root)
+                    }
+                })(window);
+            });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+    })();
+</script>
+
+<p>
+    This figure presents annual values of the Power Dissipation Index (PDI), which accounts for cyclone strength, duration,
+    and frequency. Tropical North Atlantic sea surface temperature trends are provided for reference. Note that sea surface
+    temperature is measured in different units, but the values have been plotted alongside the PDI to show how they compare.
+    The lines have been smoothed using a five-year weighted average, plotted at the middle year. The most recent average
+    (2011–2015) is plotted at 2013.
+</p>
+<div class="bk-root" align="center" id="dbcc8339-19ba-48b3-a18c-b94684c2c9a2" data-root-id="2661"></div>
+<script type="application/json" id="2996">
+          {"b648d315-ff16-49d6-853d-c89e0fd68571":{"roots":{"references":[{"attributes":{"background_fill_alpha":{"value":0.5},"background_fill_color":{"value":"beige"},"below":[{"id":"2670","type":"LinearAxis"}],"center":[{"id":"2674","type":"Grid"},{"id":"2679","type":"Grid"},{"id":"2695","type":"Legend"}],"extra_y_ranges":{"sea_temp_range":{"id":"2698","type":"Range1d"}},"left":[{"id":"2675","type":"LinearAxis"}],"plot_height":500,"plot_width":900,"renderers":[{"id":"2687","type":"GlyphRenderer"},{"id":"2703","type":"GlyphRenderer"}],"right":[{"id":"2699","type":"LinearAxis"}],"title":{"id":"2682","type":"Title"},"toolbar":{"id":"2680","type":"Toolbar"},"x_range":{"id":"2662","type":"DataRange1d"},"x_scale":{"id":"2666","type":"LinearScale"},"y_range":{"id":"2697","type":"Range1d"},"y_scale":{"id":"2668","type":"LinearScale"}},"id":"2661","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null},"id":"2662","type":"DataRange1d"},{"attributes":{"callback":null,"tooltips":[["index","$index"],["(x,y)","($x, $y)"]]},"id":"2415","type":"HoverTool"},{"attributes":{"line_color":"green","line_dash":[4,4],"line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2701","type":"Line"},{"attributes":{"callback":null,"end":83.12805999999999,"start":81.32796},"id":"2698","type":"Range1d"},{"attributes":{},"id":"2709","type":"BasicTicker"},{"attributes":{"text":"North Atlantic Tropical Cyclone Activity According to the Power Dissipation Index, 1949\u20132015","text_font_size":{"value":"12pt"}},"id":"2682","type":"Title"},{"attributes":{"line_alpha":0.5,"line_color":"orange","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2685","type":"Line"},{"attributes":{},"id":"2714","type":"Selection"},{"attributes":{"click_policy":"hide","items":[{"id":"2696","type":"LegendItem"},{"id":"2715","type":"LegendItem"}],"location":[140,310]},"id":"2695","type":"Legend"},{"attributes":{"callback":null,"data":{"x":[1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015],"y":{"__ndarray__":"AAAAAAAA+H8AAAAAAAD4f2aIY13cRgZAqMZLN4nBAkCxUGuadxwCQGMQWDm0yANAQYLix5g7A0ALJCh+jDkBQG40gLdAAgBALpCg+DFmAEDqJjEIrBwDQFFrmnecIgZATx4Wak1zBkA+6Nms+twEQEa28/3U+ANAxY8xdy0hBUDF/rJ78rAFQGrecYqOZANAEhQ/xtw1AUDLoUW28/3/P4/C9Shcj/4/vp8aL90k/T9Wfa62Yn/4P/VKWYY41vQ/vJaQD3o29T9lGeJYF7f4P6HWNO84Rfs/6+I2GsBb+T/FjzF3LSH4P1mGONbFbf4//Bhz1xLyBEC62or9ZfcGQNNNYhBYOQJACRueXinL9j/TTWIQWDnyP3xhMlUwKvY/KVyPwvUo+D8OT6+UZYj3P3DOiNLe4Pw/CfmgZ7PqA0B0kxgEVg4GQD7o2az63AJAOwFNhA1P/T/ImLuWkA/4P0mdgCbChvo//kP67etABECNl24Sg8ALQBUdyeU/JA5Au7iNBvCWDUA+6Nms+twOQCDSb18HDhBAarx0kxgEDEBnRGlv8IUHQHicoiO5fAtA0LNZ9bmaE0BVwaikTgAYQEvqBDQRNhZAHOviNhrAEEALRiV1AhoJQJCg+DHmLgdA5KWbxCCwCEDTTWIQWLkJQKOSOgFNhAhAuECC4seYA0Df4AuTqYL9PwAAAAAAAPh/AAAAAAAA+H8=","dtype":"float64","shape":[67]}},"selected":{"id":"2714","type":"Selection"},"selection_policy":{"id":"2713","type":"UnionRenderers"}},"id":"2684","type":"ColumnDataSource"},{"attributes":{"dimension":1,"ticker":{"id":"2676","type":"BasicTicker"}},"id":"2679","type":"Grid"},{"attributes":{"label":{"value":"Power Dissipation Index"},"renderers":[{"id":"2687","type":"GlyphRenderer"}]},"id":"2696","type":"LegendItem"},{"attributes":{},"id":"2814","type":"UnionRenderers"},{"attributes":{"callback":null,"data":{"x":[1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015],"y":{"__ndarray__":"AAAAAAAA+H8AAAAAAAD4fztwzojShlRAL1G9NbCNVEA16iEa3YlUQAZM4NbdgFRAjZduEoN8VECDu7N224FUQH1ETIkkhlRABOJ1/YKBVECWfVcE/3dUQF1txf6yc1RAU5YhjnV5VEBNhA1Pr3xUQFiQZiyadlRAozuInSlwVEBkzF1LyG9UQKBP5EnScVRA3e9QFOhzVEDVlc/yPHhUQFCIgEOoelRA4DKny2JyVEB6qkNuhmNUQApoImx4WlRAjswjfzBYVEDKplzhXVpUQH4YITzaYFRA8naE04JnVEBr8SkAxmtUQB8RUyKJclRAC7q9pDF+VEBD5zV2iYJUQNVDNLqDeFRAryXkg55pVEC/8bVnlmBUQEHxY8xdX1RAdEF9y5xmVEAZ/z7jwnVUQAGHUKVmg1RAs0EmGTmLVEA0uoPYmYpUQESGVbyRgVRA28TJ/Q51VECsxacAGGtUQOXQItv5blRAjPM3oRB9VECzdtuF5opUQBwlr84xmFRACKwcWmSjVECASL99HahUQMgMVMa/o1RAl4v4TsyaVEDYDdsWZZpUQAIOoUrNplRAJUBNLVu3VEDOHmgFhsRUQI6SV+cYxFRAIxCv6xe4VED1fw7z5a1UQPI8uDtrr1RAnZ0MjpK7VEDO/GoOEMRUQAzIXu/+xFRAFQDjGTTAVECgGi/dJLpUQAAAAAAAAPh/AAAAAAAA+H8=","dtype":"float64","shape":[67]}},"selected":{"id":"2815","type":"Selection"},"selection_policy":{"id":"2814","type":"UnionRenderers"}},"id":"2700","type":"ColumnDataSource"},{"attributes":{},"id":"2692","type":"BasicTickFormatter"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2686","type":"Line"},{"attributes":{"data_source":{"id":"2700","type":"ColumnDataSource"},"glyph":{"id":"2701","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"2702","type":"Line"},"selection_glyph":null,"view":{"id":"2704","type":"CDSView"},"y_range_name":"sea_temp_range"},"id":"2703","type":"GlyphRenderer"},{"attributes":{"axis_label":"Power Dissipation Index","axis_label_text_color":{"value":"navy"},"axis_label_text_font_size":{"value":"15pt"},"formatter":{"id":"2692","type":"BasicTickFormatter"},"ticker":{"id":"2676","type":"BasicTicker"}},"id":"2675","type":"LinearAxis"},{"attributes":{},"id":"2694","type":"BasicTickFormatter"},{"attributes":{"data_source":{"id":"2684","type":"ColumnDataSource"},"glyph":{"id":"2685","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"2686","type":"Line"},"selection_glyph":null,"view":{"id":"2688","type":"CDSView"}},"id":"2687","type":"GlyphRenderer"},{"attributes":{"source":{"id":"2700","type":"ColumnDataSource"}},"id":"2704","type":"CDSView"},{"attributes":{"ticker":{"id":"2671","type":"BasicTicker"}},"id":"2674","type":"Grid"},{"attributes":{"label":{"value":"Sea surface temperature (F)"},"renderers":[{"id":"2703","type":"GlyphRenderer"}]},"id":"2715","type":"LegendItem"},{"attributes":{"source":{"id":"2684","type":"ColumnDataSource"}},"id":"2688","type":"CDSView"},{"attributes":{},"id":"2668","type":"LinearScale"},{"attributes":{"axis_label":"Sea surface temperature (F)","axis_label_text_color":{"value":"navy"},"axis_label_text_font_size":{"value":"15pt"},"formatter":{"id":"2710","type":"BasicTickFormatter"},"ticker":{"id":"2709","type":"BasicTicker"},"y_range_name":"sea_temp_range"},"id":"2699","type":"LinearAxis"},{"attributes":{},"id":"2671","type":"BasicTicker"},{"attributes":{},"id":"2710","type":"BasicTickFormatter"},{"attributes":{},"id":"2676","type":"BasicTicker"},{"attributes":{},"id":"2713","type":"UnionRenderers"},{"attributes":{"axis_label":"Year","axis_label_text_font_size":{"value":"15pt"},"formatter":{"id":"2694","type":"BasicTickFormatter"},"ticker":{"id":"2671","type":"BasicTicker"}},"id":"2670","type":"LinearAxis"},{"attributes":{"callback":null,"end":6.300315,"start":1.08205},"id":"2697","type":"Range1d"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"2415","type":"HoverTool"}]},"id":"2680","type":"Toolbar"},{"attributes":{},"id":"2815","type":"Selection"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_dash":[4,4],"line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"2702","type":"Line"},{"attributes":{},"id":"2666","type":"LinearScale"}],"root_ids":["2661"]},"title":"Bokeh Application","version":"1.3.4"}}
+        </script>
+<script type="text/javascript">
+    (function () {
+        var fn = function () {
+            Bokeh.safely(function () {
+                (function (root) {
+                    function embed_document(root) {
+
+                        var docs_json = document.getElementById('2996').textContent;
+                        var render_items = [{ "docid": "b648d315-ff16-49d6-853d-c89e0fd68571", "roots": { "2661": "dbcc8339-19ba-48b3-a18c-b94684c2c9a2" } }];
+                        root.Bokeh.embed.embed_items(docs_json, render_items);
+
+                    }
+                    if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                    } else {
+                        var attempts = 0;
+                        var timer = setInterval(function (root) {
+                            if (root.Bokeh !== undefined) {
+                                embed_document(root);
+                                clearInterval(timer);
+                            }
+                            attempts++;
+                            if (attempts > 100) {
+                                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                                clearInterval(timer);
+                            }
+                        }, 10, root)
+                    }
+                })(window);
+            });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+    })();
+</script>
+
 </body>
 
 <hr />
@@ -875,16 +1019,16 @@ See that CO2 emissions have been constantly increasing since the industrial peri
 <li>See the most polluting countries by year</li>
 <li>Correlation between CO2 emissions and the increase in temperature.</li>
 </ul>
-<h2 id="Skill Sets" style="text-align: left;">Skillset</h2>
+<h2 id="skiiset" style="text-align: left;">Skillset</h2>
 <ul style="text-align: left;">
 <li>D3.js for the visualizations on the web page.</li>
-<li><a href="https://www.statsmodels.org/stable/generated/statsmodels.tsa.statespace.sarimax.SARIMAXResults.get_prediction.html?highlight=get_prediction#statsmodels.tsa.statespace.sarimax.SARIMAXResults.get_prediction">Presition using statsmodels.org</a></li>  
 <li>Data clean using Pandas</li>
 <li>sci-kit learn to calculate the correlations and predictions</li>
 </ul>
 <h2 id="dataset" style="text-align: left;">Dataset</h2>
 <ul style="text-align: left;">
 <li><a href="https://datahub.io/collections/climate-change">https://datahub.io/collections/climate-change</a></li>
+<li><a href="https://epa.gov/climate-indicators">https://epa.gov/climate-indicators</a></li>
 </ul>
 <h2 id="reference-code-sources" style="text-align: left;">Reference Code sources</h2>
 <ul style="text-align: left;">
